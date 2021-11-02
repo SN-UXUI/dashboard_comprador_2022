@@ -1,0 +1,600 @@
+:root {
+    font-family: "Helvetica Neue", "Helvetica", arial, sans-serif;
+    --bg_menu: #f5f5f5;
+    --bg_menu_sel: #eeeeee;
+    --bg_submenu: #ffffff;
+}
+
+.submenu {
+    background-color: var(--bg_submenu);
+}
+
+.menusel {
+    background-color: var(--bg_menu_sel);
+}
+
+body {
+    font-size: 14px;
+    background-color: #f5f5f5;
+}
+
+.menu_sn5_top {
+    width: 100%;
+    background-color: white;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15 0 15;
+    align-items: center;
+}
+
+.menu_sn5_top .nav {
+    height: 38px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lg-senegocia img {
+    float: right;
+    width: 111.5px;
+    margin-top: 5px;
+    margin-right: -18px;
+    height: 24px;
+}
+
+.lg-cliente img {
+    width: 120px;
+    margin-left: -18.5px;
+    float: left;
+    margin-top: -2px;
+    height: 27px;
+}
+
+#menu_sn5_middle {
+    height: 67.19px;
+    background-color: #555555;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 15px 0 15px 0;
+    align-items: center;
+}
+
+.content {
+    padding: 16px;
+}
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.menu_bg {
+    background-color: #f5f5f5;
+}
+
+#menu_lateral_sn5 {
+    text-decoration: none;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: -webkit-fill-available;
+    margin-top: -45.73px;
+    border-right: #dbdbdb solid 1px;
+    width: 68px;
+    margin-right: 0;
+    transition: 600ms ease;
+}
+
+.menu_item_sn5 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    color: #555;
+}
+
+.menu_link_sn5 i {
+    font-size: 1.1rem;
+    padding-bottom: 2px;
+}
+
+.menu_item_sn5 a {
+    height: 100%;
+    width: 100%;
+    color: #555;
+    text-decoration: none;
+    padding-top: 10px;
+}
+
+.menu_item_sn5:hover {
+    background: rgb(238, 238, 238);
+}
+
+.menu_link_sn5 span {
+    letter-spacing: -0.5px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 9px;
+}
+
+.menu_link_sn5 {
+    text-decoration: none;
+    display: flex;
+    flex-flow: column wrap;
+    color: #555;
+}
+
+.breadcums_title {
+    height: 46px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    color: #777;
+    font-size: 14px;
+    margin-left: 68px;
+    z-index: -2 !important;
+}
+
+.breadcums_title i {
+    padding-left: 10px;
+    padding-right: 4px;
+    z-index: -1 !important;
+}
+
+.breadcums_title span {
+    font-size: 16px;
+    font-weight: 500;
+    z-index: -1 !important;
+}
+
+.user_sec_sn5 {
+    margin-left: 10px;
+    width: 296px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.foto_perfil_sn5 img {
+    width: 37px;
+    height: 37px;
+    border: 0;
+    padding: 0.15rem;
+}
+
+.text_perfil_sn5 {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+    margin-left: 11px;
+    color: white;
+    margin-bottom: 3px;
+}
+
+.text_perfil_sn5 span:first-child {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: -3px;
+}
+
+.text_perfil_sn5 span {
+    font-size: 0.95em;
+    margin-bottom: -3px;
+}
+
+.text_perfil_sn5 span:last-child {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: -3px;
+}
+
+.icon_perfil_sn5 {
+    float: right;
+    position: absolute;
+    left: 284px;
+    color: white;
+}
+
+.buscador_sn5 {
+    width: 847px;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-left: 38px;
+}
+
+.soporte_text_sn5 {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+}
+
+.soporte_text_sn5 span:last-child {
+    font-size: 0.88rem;
+}
+
+.buscador_sn5 .buscador_barra {
+    width: 791px;
+    border: 0;
+    border-radius: 0.25rem;
+    height: 28px;
+    padding-left: 214px;
+    font-size: 0.9rem;
+    margin-right: 22px;
+}
+
+.drop_sn5_buscador {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: center;
+    position: absolute;
+    background-color: #e99100;
+    color: white;
+    font-size: 0.9rem;
+    width: 198px;
+    height: 26px;
+    padding-left: 11px;
+    left: 344.5;
+    font-weight: 500;
+}
+
+.drop_sn5_buscador i {
+    padding-left: 5px;
+    padding-right: 10px;
+    position: absolute;
+    left: 174;
+}
+
+.btn_buscar {
+    background-color: #ff3d3d;
+    height: 26px;
+    width: 39px;
+    position: absolute;
+    color: white;
+    right: 219px;
+}
+
+.btn_config {
+    position: absolute;
+    font-size: 1.1rem;
+    right: 212px;
+}
+
+.cat_most_buy {
+    height: 40rem;
+    width: 215px;
+    background-color: white;
+    border-radius: 0.25rem;
+}
+
+.cat_mb_title {
+    margin: 0 !important;
+    height: 3rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    color: #555;
+    font-weight: 600;
+    border-radius: 0.25rem;
+}
+
+.cat_mb_title img {
+    padding-right: 6px;
+}
+
+.cat_mb_body {
+    padding: 2%;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cat_mb_prod {
+    border: #777 solid 1px;
+    height: 20%;
+}
+
+.title_sn5_snap {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    text-align: left;
+}
+
+.title_sn5_cat {
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 5%;
+    padding: 2%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+    justify-content: center;
+    background-blend-mode: multiply;
+    opacity: 0.45;
+    margin: 0 !important;
+}
+
+.cont_sn5_main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.cont_sn5_main div {
+    margin: 8.2px;
+}
+
+.cat_sn5_snap {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: none;
+    width: 80%;
+    justify-content: center;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.sn_5_card_cat {
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 3px;
+    transition: 400ms ease;
+    box-shadow: -1px -1px 18px -9px rgba(105, 105, 105, 1);
+}
+
+.sn_5_card_cat:hover {
+    width: 15.3rem;
+    height: 15.3rem;
+}
+
+.title_card_sn5 {
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 20%;
+    padding: 2%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-blend-mode: multiply;
+    opacity: 0.45;
+    margin-bottom: 0 !important;
+}
+
+.title_card_sn5_2 {
+    background-color: white;
+    color: #555;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 20%;
+    padding: 2%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.abarrotes {
+    background-size: 16rem 16rem;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-image: url(https://img.freepik.com/foto-gratis/borroso-abstracto-supermercado_74190-5794.jpg?size=626&ext=jpg);
+}
+
+.portada_1 {
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: -301px;
+    background-repeat: no-repeat;
+    background-image: url(../SN5_EMULATED_MAQUETA/media/portada_1.jpg);
+}
+
+.portada_2 {
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-image: url();
+}
+
+#divIframePrincipal {
+    width: 94.98%;
+    height: 100%;
+    display: flex;
+    margin-left: 68px;
+    border: 0;
+    margin-top: -659px;
+}
+
+.categorias {
+    text-align: left;
+    font-size: 12px;
+}
+
+.categorias ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.categorias li {
+    display: inline;
+    color: black;
+}
+
+.categorias a {
+    color: black;
+}
+
+.categorias i {
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+}
+
+.categorias span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.categorias h5 {
+    margin-bottom: 33px;
+    margin-top: 17px;
+    font-weight: 600;
+}
+
+.cat_sn_catalogo {
+    display: flex;
+    align-items: baseline;
+    font-weight: 600;
+}
+
+.cat_sn_catalogo a {
+    padding-right: 8px;
+    margin-left: 0px;
+}
+
+.card_sn_cat {
+    background-color: white;
+    width: 235px;
+    height: 222px;
+    margin: 0;
+    padding: 0;
+}
+
+.img_card_sn_cat {
+    height: 156px;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0;
+}
+
+.img_card_sn_cat img {
+    max-height: 157px;
+}
+
+.title_card_sn {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    height: 48px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#menu_lateral_sn5_open {
+    text-decoration: none;
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: left;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    height: -webkit-fill-available;
+    margin-top: -45.73px;
+    border-right: #dbdbdb solid 1px;
+    width: 200px;
+    margin-right: 0;
+    z-index: 3 !important;
+    background-color: #f5f5f5;
+    transition: 400ms ease;
+}
+
+#menu_lateral_sn5_open .menu_item_sn5 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    color: #555;
+    z-index: 3 !important;
+}
+
+#menu_lateral_sn5_open .menu_link_sn5 {
+    text-decoration: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    color: #555;
+    padding-left: 10px;
+    z-index: 3 !important;
+}
+
+#menu_lateral_sn5_open i {
+    padding-right: 10px;
+    text-align: center;
+}
+
+#menu_lateral_sn5_open span {
+    text-align: left;
+}
+
+#menu_lateral_sn5_open ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+.icon_container {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

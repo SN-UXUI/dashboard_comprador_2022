@@ -1,0 +1,1079 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="../sn10_2020.css">
+
+    <link rel="icon" href="./media/sn_logo_color.png">
+    <title>Senegocia</title>
+
+
+</head>
+
+<body style="background-color:#fafafa ;">
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a rel="../SECCIONES/sn_10_home.html">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Consulta DTE</li>
+                </ol>
+            </nav>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#todas" role="tab"
+                        aria-controls="home" aria-selected="true">Todas <div class="numero-aviso rounded-circle">1</div>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#aceptada" role="tab"
+                        aria-controls="profile" aria-selected="false">Pendiente Asignación de Flujos<div
+                            class="numero-aviso rounded-circle">0</div></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#aceptada_d" role="tab"
+                        aria-controls="contact" aria-selected="false">Pendiente de Aprobación<div
+                            class="numero-aviso rounded-circle">1</div></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">Aprobada<div class="numero-aviso rounded-circle">0
+                        </div></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">Rechazada<div class="numero-aviso rounded-circle">
+                            0</div></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">Pendiente de Contabilización<div
+                            class="numero-aviso rounded-circle">0</div></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">Contabilizada<div
+                            class="numero-aviso rounded-circle">0</div></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">Enviado a pago<div
+                            class="numero-aviso rounded-circle">0</div></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">Pagado<div class="numero-aviso rounded-circle">0
+                        </div></a>
+                </li>
+            </ul>
+            <div>
+                <div>
+                    <div class="filtros-fechas">
+                        <div class="content">
+                            <div>Tipo de fecha</div>
+                            <div>
+                                <select name="opciones_filtros_dte_fechas" id="op_fil_dte">
+                                    <option>Fecha emision DTE</option>
+                                    <option>Fecha SII</option>
+                                    <option>Fecha ARM</option>
+                                    <option>Fecha aceptación</option>
+                                    <option>Fecha aceptación</option>
+                                    <option>Fecha de cesión</option>
+                                    <option>Fecha de vigencia comercial</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="content">
+                            <div>Fecha de inicio</div>
+                            <input type="date" class="input-sm form-control" name="start" placeholder="Fecha inicio" />
+                        </div>
+                        <div class="content">
+                            <div>Fecha de termino</div>
+                            <input type="date" class="input-sm form-control" name="end" placeholder="Fecha termino" />
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="sec-filtros">
+                <div class="sec-buscador-filtros">
+                    <div>
+                        <select name="opciones_filtros_dte" id="op_fil_dte">
+                            <option id="op_01">Nombre receptor</option>
+                            <option id="op_02">Número de DTE</option>
+                            <option id="op_03">OC</option>
+                            <option id="op_04">ID Recepción</option>
+                            <option id="op_05">Rut receptor</option>
+                            <option id="op_06">Rut emisor</option>
+                            <option id="op_07">Nombre emisor</option>
+                        </select>
+                    </div>
+                    <input id="busc" type="text" placeholder="Ingrese nombre de receptor">
+                </div>
+                <div class="sec-buscador-filtros">
+                    <div class="content">
+                        <select name="opciones_filtros_dte" id="op_fil_dte">
+                            <option id="op_01">Documentos cedidos</option>
+                            <option id="op_02">Vigencia comercial</option>
+                            <option id="op_03">Acuse de recibo de mercadería</option>
+                        </select>
+
+                    </div>
+                    <div>
+                        <select name="opciones_filtros_dte" id="op_fil_dte">
+                            <option id="op_01"></option>
+                            <option id="op_02">Con aprobación comercial</option>
+                            <option id="op_03">Con rechazo comercial</option>
+                            <option id="op_04">Con recibo de mercaderías</option>
+                            <option id="op_05">Sin recibo de mercaderías</option>
+                            <option id="op_06">Aceptación OK en Senegocia</option>
+                            <option id="op_07"> Contabilizado</option>
+                            <option id="op_07">Enviado a pago</option>
+                            <option id="op_07">Pagado</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-outline-dark" style="width: 200px">Buscar</button>
+                </div>
+            </div>
+            <div class="sec-filtros" style="margin-bottom:10px;margin-top:5px;">
+                <div class="filto-opc">
+
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ordenar DTE
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Fecha de DTE</a>
+                        <a class="dropdown-item" href="#">Fecha SII</a>
+                        <a class="dropdown-item" href="#">Monto Neto</a>
+                        <a class="dropdown-item" href="#">Vigencia comrecial SII</a>
+                        <a class="dropdown-item" href="#">Cantidad</a>
+                        <a class="dropdown-item" href="#">Razón social</a>
+                        <a class="dropdown-item" href="#">RUT Receptor</a>
+                        <a class="dropdown-item" href="#">ARM</a>
+                    </div>
+                </div>
+                <div class="btn filto-opc">
+                    <i class="far fa-plus"></i>
+                    Ingreso manual DTE
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="todas" role="tabpanel" aria-labelledby="home-tab">
+                <div class="container pantallainfo-dte">
+
+
+
+                    <div id="card-info-dte" class="shadow container-fluid">
+                        <div class="opciones_dte_card">
+                            <div class="seleccion_dte">
+                                <input type="checkbox">
+                            </div>
+                            <div class="opciones_des_dte">
+                                <div class="btn btn-outline-dark dropdown-toggle" type="button" id="opciones_ARM"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-th"></i>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="opciones_ARM">
+                                    <button class="btn btn-info-dte">
+                                        <i class="fal fa-user-check"></i>
+                                        <span>Cesión Factura</span>
+                                    </button>
+                                    <button class="btn btn-info-dte">
+                                        <i class="fal fa-clock"></i>
+                                        <span>Vigencia comercial</span>
+                                    </button>
+                                    <button class="btn btn-info-dte">
+                                        <i class="fal fa-box-check"></i>
+                                        <span>ARM</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card-dte-title">
+                                <div class="titulo" style="padding-right:10px;">Estado DTE:</div>
+
+                                <div class="titulo">Pendiente de Aprobación</div>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-dark dropdown-toggle" type="button"
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Contabilizar DTE
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Aprobar DTE</a>
+                                    <a class="dropdown-item" href="#">Rechazar DTE</a>
+                                    <a class="dropdown-item" href="#">Gestionar DTE</a>
+                                    <a class="dropdown-item" href="#">Asignar a flujo de aprobación</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="info-dte-factura">
+                            <div class="sec-title">
+                                <i class="far fa-file-invoice-dollar"></i>
+                                Factura
+                            </div>
+                            <div class="sec-contenido">
+                                <div class="sec-btn-factura">
+
+                                    <a class="btn btn-secondary" href="#">102030</a>
+
+                                </div>
+                                <div class="dte-sec-info">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <th>Fecha emisión DTE</th>
+                                                <td>01-08-2020</td>
+                                                <th>Emisor</th>
+                                                <td>Sociedad Punta de cobre S.A</td>
+                                                <th>Monto total</th>
+                                                <td>10.000.000 CLP</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <th>Fecha publicación SII</th>
+                                                <td>01-08-2020</td>
+                                                <th>Receptor</th>
+                                                <td>Easton Inmobiliaria Industrial SPA</td>
+                                                <th>Monto neto</th>
+                                                <td>10.000.000 CLP</td>
+
+                                            </tr>
+                                            <th>Fecha recepción SII</th>
+                                            <td>10-02-2020</td>
+                                            <th></th>
+                                            <td></td>
+                                            <th>Cantidad</th>
+                                            <td>102</td>
+                                            <tr>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="seleccion_botones">
+                                <div>
+                                    <button class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal"
+                                        style="display: flex;flex-flow:row nowrap;align-items: center;justify-content: center;">
+                                        <div style="padding-right:12px;"><i class="far fa-exclamation-circle"></i></div>
+                                        <div>ARM</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;">Pendiente</div>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-success" data-toggle="modal"
+                                        data-target="#exampleModal"
+                                        style="display: flex;flex-flow:row nowrap;align-items: center;justify-content: center;">
+                                        <div style="padding-right:12px;"><i class="far fa-exclamation-circle"></i></div>
+                                        <div>Vigencia comercial</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;">8 Dias</div>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-dark" id="boton_consulta" data-toggle="modal"
+                                        data-target="#cesion"
+                                        style="display: flex;flex-flow:row nowrap;align-items: center;justify-content: center;">
+
+                                        <div>Cesión</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;">No</div>
+                                    </button>
+                                    <button class="btn btn-success" id="boton_aceptado" data-toggle="modal"
+                                        data-target="#cesion_ok"
+                                        style="display:none;flex-flow:row nowrap;align-items: center;justify-content: center;">
+
+                                        <div>Cesión</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;">Si</div>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-dark" data-toggle="modal"
+                                        data-target="#flujo_usuario"
+                                        style="display: flex;flex-flow:row nowrap;align-items: center;justify-content: center;">
+                                        <div style="padding-right:12px;"><i class="far fa-user-circle"></i></div>
+                                        <div>Siguiente Aprobador</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;"
+                                            data-toggle="modal" data-target="#usuario_flujo">Juan Velazco</div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="padding-bottom: 1%;">
+                        <div class="sec-col-contenido">
+                            <div class="sec-col">
+                                <div class="info-dte-oc">
+
+                                    <div class="sec-title">
+                                        <i class="far fa-file-invoice"></i>
+                                        Orden de compra
+                                    </div>
+                                    <div class="sec-contenido-oc">
+                                        <div class="sec-btn-oc">
+
+                                            <a class="btn btn-secondary" href="#">102030</a>
+
+                                        </div>
+                                        <div class="dte-sec-info-oc">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Fecha OC</th>
+                                                        <td>01-08-2020</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Monto OC</th>
+                                                        <td>11.900.000 CLP</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Cantidad OC</th>
+                                                        <td>102</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Estado OC</th>
+                                                        <td>En espera de Aprobación <a class="encargado"
+                                                                href="">ANGELICA
+                                                                MORA</a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="vl"></div>
+                            <div class="sec-col">
+                                <div class="info-dte-oc">
+                                    <div class="sec-title">
+                                        <i class="far fa-truck"></i>
+                                        Recepción
+                                    </div>
+                                    <div class="sec-contenido-oc">
+                                        <div class="sec-btn-oc">
+
+                                            <a class="btn btn-secondary disabled" href="#"
+                                                style="width: 80px;">-----</a>
+
+                                        </div>
+                                        <div class="dte-sec-info-oc">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Fecha Recepción</th>
+                                                        <td>----</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Monto Recepción</th>
+                                                        <td>------</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Cantidad Recepción</th>
+                                                        <td>---</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Estado Recepción</th>
+                                                        <td>Sin recepción</td>
+                                                    </tr>
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="card-info-dte" class="shadow container-fluid">
+                        <div class="opciones_dte_card">
+                            <div class="seleccion_dte">
+                                <input type="checkbox">
+                            </div>
+                            <div class="opciones_des_dte">
+                                <div class="btn btn-outline-dark dropdown-toggle" type="button" id="opciones_ARM"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-th"></i>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="opciones_ARM">
+                                    <button class="btn btn-info-dte">
+                                        <i class="fal fa-user-check"></i>
+                                        <span>Cesión Factura</span>
+                                    </button>
+                                    <button class="btn btn-info-dte">
+                                        <i class="fal fa-clock"></i>
+                                        <span>Vigencia comercial</span>
+                                    </button>
+                                    <button class="btn btn-info-dte">
+                                        <i class="fal fa-box-check"></i>
+                                        <span>ARM</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card-dte-title">
+                                <div class="titulo" style="padding-right:10px;">Estado DTE:</div>
+
+                                <div class="titulo">Pendiente de Aprobación</div>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-dark dropdown-toggle" type="button"
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Contabilizar DTE
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Aprobar DTE</a>
+                                    <a class="dropdown-item" href="#">Rechazar DTE</a>
+                                    <a class="dropdown-item" href="#">Gestionar DTE</a>
+                                    <a class="dropdown-item" href="#">Asignar a flujo de aprobación</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="info-dte-factura">
+                            <div class="sec-title">
+                                <i class="far fa-file-invoice-dollar"></i>
+                                Factura
+                            </div>
+                            <div class="sec-contenido">
+                                <div class="sec-btn-factura">
+
+                                    <a class="btn btn-secondary" href="#">102030</a>
+
+                                </div>
+                                <div class="dte-sec-info">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <th>Fecha emisión DTE</th>
+                                                <td>01-08-2020</td>
+                                                <th>Emisor</th>
+                                                <td>Sociedad Punta de cobre S.A</td>
+                                                <th>Monto total</th>
+                                                <td>10.000.000 CLP</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <th>Fecha publicación SII</th>
+                                                <td>01-08-2020</td>
+                                                <th>Receptor</th>
+                                                <td>Easton Inmobiliaria Industrial SPA</td>
+                                                <th>Monto neto</th>
+                                                <td>10.000.000 CLP</td>
+
+                                            </tr>
+                                            <th>Fecha recepción SII</th>
+                                            <td>10-02-2020</td>
+                                            <th></th>
+                                            <td></td>
+                                            <th>Cantidad</th>
+                                            <td>102</td>
+                                            <tr>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="seleccion_botones">
+                                <div>
+                                    <button class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal"
+                                        style="display: flex;flex-flow:row nowrap;align-items: center;justify-content: center;">
+                                        <div style="padding-right:12px;"><i class="far fa-exclamation-circle"></i></div>
+                                        <div>ARM</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;">Pendiente</div>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-success" data-toggle="modal"
+                                        data-target="#exampleModal"
+                                        style="display: flex;flex-flow:row nowrap;align-items: center;justify-content: center;">
+                                        <div style="padding-right:12px;"><i class="far fa-exclamation-circle"></i></div>
+                                        <div>Vigencia comercial</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;">8 Dias</div>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-dark" id="boton_consulta" data-toggle="modal"
+                                        data-target="#cesion"
+                                        style="display: flex;flex-flow:row nowrap;align-items: center;justify-content: center;">
+
+                                        <div>Cesión</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;">No</div>
+                                    </button>
+                                    <button class="btn btn-success" id="boton_aceptado" data-toggle="modal"
+                                        data-target="#cesion_ok"
+                                        style="display:none;flex-flow:row nowrap;align-items: center;justify-content: center;">
+
+                                        <div>Cesión</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;">Si</div>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-dark" data-toggle="modal"
+                                        data-target="#flujo_usuario"
+                                        style="display: flex;flex-flow:row nowrap;align-items: center;justify-content: center;">
+                                        <div style="padding-right:12px;"><i class="far fa-user-circle"></i></div>
+                                        <div>Siguiente Aprobador</div>
+                                        <div class=" disabled" style="display:flex;padding-left:12px;"
+                                            data-toggle="modal" data-target="#usuario_flujo">Juan Velazco</div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="sec-title">
+                            Ordenes de compra asociadas <div class="numero-aviso rounded-circle">3</div>
+                        </div>
+                        <div class="multiple_oc_asoc">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                        aria-controls="home" aria-selected="true">0C 02019 </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                        aria-controls="profile" aria-selected="false">OC 02020</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                                        aria-controls="contact" aria-selected="false">OC 02024</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab" style="width:100%;">
+                                    <div class="sec-col-contenido">
+                                        <div class="sec-col">
+                                            <div class="info-dte-oc">
+
+                                                <div class="sec-title">
+                                                    <i class="far fa-file-invoice"></i>
+                                                    Orden de compra
+                                                </div>
+                                                <div class="sec-contenido-oc">
+                                                    <div class="sec-btn-oc">
+
+                                                        <a class="btn btn-secondary" href="#">02019</a>
+
+                                                    </div>
+                                                    <div class="dte-sec-info-oc">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Fecha OC</th>
+                                                                    <td>01-08-2020</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Monto OC</th>
+                                                                    <td>11.900.000 CLP</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Cantidad OC</th>
+                                                                    <td>102</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Estado OC</th>
+                                                                    <td>En espera de Aprobación <a class="encargado"
+                                                                            href="">ANGELICA
+                                                                            MORA</a></td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="vl"></div>
+                                        <div class="sec-col">
+                                            <div class="info-dte-oc">
+                                                <div class="sec-title" style="padding-left:5px;">
+                                                    <i class="far fa-truck"></i>
+                                                    Recepción
+                                                </div>
+                                                <div class="sec-contenido-oc">
+                                                    <div class="sec-btn-oc">
+
+                                                        <a class="btn btn-secondary disabled" href="#"
+                                                            style="width: 80px;">-----</a>
+
+                                                    </div>
+                                                    <div class="dte-sec-info-oc">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Fecha Recepción</th>
+                                                                    <td>----</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Monto Recepción</th>
+                                                                    <td>------</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Cantidad Recepción</th>
+                                                                    <td>---</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Estado Recepción</th>
+                                                                    <td>Sin recepción</td>
+                                                                </tr>
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"
+                                    style="width:100%;">
+                                    <div class="sec-col-contenido">
+                                        <div class="sec-col">
+                                            <div class="info-dte-oc">
+
+                                                <div class="sec-title">
+                                                    <i class="far fa-file-invoice"></i>
+                                                    Orden de compra
+                                                </div>
+                                                <div class="sec-contenido-oc">
+                                                    <div class="sec-btn-oc">
+
+                                                        <a class="btn btn-secondary" href="#">020</a>
+
+                                                    </div>
+                                                    <div class="dte-sec-info-oc">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Fecha OC</th>
+                                                                    <td>01-08-2020</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Monto OC</th>
+                                                                    <td>11.900.000 CLP</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Cantidad OC</th>
+                                                                    <td>102</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Estado OC</th>
+                                                                    <td>En espera de Aprobación <a class="encargado"
+                                                                            href="">ANGELICA
+                                                                            MORA</a></td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="vl"></div>
+                                        <div class="sec-col">
+                                            <div class="info-dte-oc">
+                                                <div class="sec-title" style="padding-left:5px;">
+                                                    <i class="far fa-truck"></i>
+                                                    Recepción
+                                                </div>
+                                                <div class="sec-contenido-oc">
+                                                    <div class="sec-btn-oc">
+
+                                                        <a class="btn btn-secondary disabled" href="#"
+                                                            style="width: 80px;">-----</a>
+
+                                                    </div>
+                                                    <div class="dte-sec-info-oc">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Fecha Recepción</th>
+                                                                    <td>----</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Monto Recepción</th>
+                                                                    <td>------</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Cantidad Recepción</th>
+                                                                    <td>---</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Estado Recepción</th>
+                                                                    <td>Sin recepción</td>
+                                                                </tr>
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"
+                                    style="width:100%;">
+                                    <div class="sec-col-contenido">
+                                        <div class="sec-col">
+                                            <div class="info-dte-oc">
+
+                                                <div class="sec-title">
+                                                    <i class="far fa-file-invoice"></i>
+                                                    Orden de compra
+                                                </div>
+                                                <div class="sec-contenido-oc">
+                                                    <div class="sec-btn-oc">
+
+                                                        <a class="btn btn-secondary" href="#">02024</a>
+
+                                                    </div>
+                                                    <div class="dte-sec-info-oc">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Fecha OC</th>
+                                                                    <td>01-08-2020</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Monto OC</th>
+                                                                    <td>11.900.000 CLP</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Cantidad OC</th>
+                                                                    <td>102</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Estado OC</th>
+                                                                    <td>En espera de Aprobación <a class="encargado"
+                                                                            href="">ANGELICA
+                                                                            MORA</a></td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="vl"></div>
+                                        <div class="sec-col">
+                                            <div class="info-dte-oc">
+                                                <div class="sec-title" style="padding-left:5px;">
+                                                    <i class="far fa-truck"></i>
+                                                    Recepción
+                                                </div>
+                                                <div class="sec-contenido-oc">
+                                                    <div class="sec-btn-oc">
+
+                                                        <a class="btn btn-secondary disabled" href="#"
+                                                            style="width: 80px;">-----</a>
+
+                                                    </div>
+                                                    <div class="dte-sec-info-oc">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Fecha Recepción</th>
+                                                                    <td>----</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Monto Recepción</th>
+                                                                    <td>------</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Cantidad Recepción</th>
+                                                                    <td>---</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Estado Recepción</th>
+                                                                    <td>Sin recepción</td>
+                                                                </tr>
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="aceptada" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="container pantallainfo-dte">
+
+                </div>
+                <div class="tab-pane fade" id="aceptada_d" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="container pantallainfo">
+                        <h>No existe información</h>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Acuso recibo de mercadería y vigencia comercial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">ARM</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                aria-controls="profile" aria-selected="false">Vigencia comercial</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div style="padding-bottom: 15px;text-align: center;padding-top: 10px;">
+                                <h3>Acuse de recibo de mercaderías</h3>
+                            </div>
+                            <table class="table table-responsive-xl table-borderless"
+                                style="display: flex;align-items: center;justify-content: center;">
+                                <tbody>
+                                    <tr>
+                                        <th>Acción</th>
+                                        <td><select>
+                                                <option select>Seleccione una acción</option>
+                                                <option value="Aceptar ARM">Aceptar</option>
+                                                <option value="Rechazar ARM">Rechazar</option>
+                                            </select></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Glosa / Recinto</th>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Clave</th>
+                                        <td><input type="password"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="certificar">
+                                <div>Notificar SII</div>
+                                <div><input type="checkbox"></div>
+                                <div>Notificar al emisor</div>
+                                <div><input type="checkbox"></div>
+                            </div>
+                            <div class="aprobar_SII">
+                                <div class="texto_dte_decla">Se declara bajo juramento la ley 19.983. La acción
+                                    selecionada sera envia al SII conforme a la ley 20.956.</div>
+                                <div><input type="checkbox"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div style="padding-bottom: 15px;text-align: center;padding-top: 10px;">
+                                <h3>Acuso de vigencia comercial</h3>
+                            </div>
+                            <table class="table table-responsive-xl table-borderless"
+                                style="display: flex;align-items: center;justify-content: center;">
+                                <tbody>
+                                    <tr>
+                                        <th>Acción</th>
+                                        <td><select>
+                                                <option select>Seleccione una acción</option>
+                                                <option value="Aceptar ARM">Con recibo de mercaderías</option>
+                                                <option value="Rechazar ARM">Sin recibo de mercaderías</option>
+                                            </select></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Glosa / Recinto</th>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Clave</th>
+                                        <td><input type="password"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="certificar">
+                                <div>Notificar SII</div>
+                                <div><input type="checkbox"></div>
+                                <div>Notificar al emisor</div>
+                                <div><input type="checkbox"></div>
+                            </div>
+                            <div class="aprobar_SII">
+                                <div class="texto_dte_decla">Se declara bajo juramento la ley 19.983. La acción
+                                    selecionada sera envia al SII conforme a la ley 20.956.</div>
+                                <div><input type="checkbox"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="cesion_ok" tabindex="-1" aria-labelledby="cesion_ok" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Consulta de cesión de factura al SII</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align:center;">
+                    La Factura <b>12355</b> actualmente ya se encuentra cedida.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="flujo_usuario" tabindex="-1" aria-labelledby="cesion_ok" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Consulta de flujo de usarios</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align:center;">
+                    <div class="consulta_usuarios">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal cesion -->
+    <div class="modal fade" id="cesion" tabindex="-1" aria-labelledby="cesion" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Consulta de cesión de factura al SII</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align:center;">
+                    ¿Desea consultar si la factura ha sido cedida?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal"
+                        onclick="aceptado()">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/bd4dd1fbd8.js" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <script>
+        function vanish() {
+            document.getElementById("Fechas_busc").style.display = "none";
+            document.getElementById("datepicker").style.display = "none";
+        }
+
+        function reveal() {
+            document.getElementById("Fechas_busc").style.display = "flex";
+            document.getElementById("datepicker").style.display = "flex";
+        }
+
+        function aceptado() {
+            document.getElementById("boton_consulta").style.display = "none";
+            document.getElementById("boton_aceptado").style.display = "flex";
+        }
+
+        function opencesion() {
+            $(window.parent.document).find('#cesion');
+        }
+    </script>
+</body>
+
+</html>

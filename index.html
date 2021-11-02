@@ -1,0 +1,339 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="./estilo_sn5.css" />
+    <link rel="icon" href="./media/sn_logo_color.png" />
+    <title>Senegocia</title>
+</head>
+
+<body>
+    <!--Menu superior-->
+    <nav class="menu_sn5_top container-fluid">
+        <div class="col-xs-5 col-md-5">
+            <div class="lg-cliente">
+                <img src="https://qaportal.senegocia.com/Content/app/images/Empresas/20376_5250_20200720161913.png" alt="" />
+            </div>
+        </div>
+        <div class="btn_config">
+            <i class="fal fa-cog"></i>
+        </div>
+        <div class="col-xs-7 col-md-7">
+            <div class="lg-senegocia">
+                <img src="https://qaportal.senegocia.com/Content/app/images/lg_senegocia.png" alt="" />
+            </div>
+        </div>
+    </nav>
+    <nav id="menu_sn5_middle">
+        <div class="user_sec_sn5">
+            <div class="foto_perfil_sn5">
+                <img class="img-thumbnail rounded-circle" src="https://qaportal.senegocia.com/Content/app/images/Avatar/20376_6706_20200721182532.jpg" alt="" />
+            </div>
+            <div class="text_perfil_sn5">
+                <span>ABASTIBLE S.A</span>
+                <span>Usuario Prueba</span>
+                <span>Ambiente Comprador</span>
+            </div>
+            <div class="icon_perfil_sn5">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <div class="buscador_sn5">
+            <div class="drop_sn5_buscador">
+                Productos o servicios
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <input class="buscador_barra" type="text" placeholder="Ingrese nombre, descripción o código..." />
+
+            <div class="btn btn_buscar">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="soporte_text_sn5">
+            <span>Soporte</span>
+            <span>+562 2 9238700</span>
+        </div>
+    </nav>
+    <nav class="breadcums_title" id="title_section">
+        <i class="fas fa-home"></i>
+        <span>Inicio</span>
+    </nav>
+    <!--Menu lateral abierto-->
+    <nav id="menu_lateral_sn5_open">
+        <ul>
+            <li class="menu_item_sn5 menusel">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <ul class="submenu" style="padding-left: 10px">
+                <li class="menu_item_sn5" onclick="closeNav()">
+                    <a class="menu_link_sn5" rel="./secciones/home.html">
+                        <div class="icon_container">
+                            <i class="fal fa-tachometer-alt-slow"></i>
+                        </div>
+                        <span>Opción 1</span>
+                    </a>
+                </li>
+                <li class="menu_item_sn5" onclick="closeNav()">
+                    <a class="menu_link_sn5" rel="./secciones/home_opc2.html">
+                        <div class="icon_container">
+                            <i class="fal fa-tachometer-alt-slow"></i>
+                        </div>
+                        <span>Opción 2</span>
+                    </a>
+                </li>
+                <li class="menu_item_sn5" onclick="closeNav()">
+                    <a class="menu_link_sn5" rel="./secciones/home_opc3.html">
+                        <div class="icon_container">
+                            <i class="fal fa-tachometer-alt-slow"></i>
+                        </div>
+                        <span>Opción 3 </span>
+                    </a>
+                </li>
+            </ul>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span>Pedidos</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <span>Licitaciones</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-handshake-alt"></i>
+                    </div>
+                    <span>Gestion de contratos</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <span>Cotizaciones</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <span>Compras directas</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <span> Órdenes de compra</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <span>DTE</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-file-certificate"></i>
+                    </div>
+                    <span>Contratos marco</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <span> Recepciones</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span> Admin</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span> Proveedores</span>
+                </a>
+            </li>
+            <li class="menu_item_sn5">
+                <a class="menu_link_sn5" href="#">
+                    <div class="icon_container">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <span>Reportes</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!--Menu lateral-->
+    <nav id="menu_lateral_sn5">
+        <ul class="menu_item_sn5">
+            <a class="menu_link_sn5" onclick="openNav()">
+                <li style="display: flex; flex-flow: column">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>Pedidos</span>
+                </li>
+            </a>
+        </ul>
+
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-gavel"></i>
+                    <span>Licitaciones</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-handshake-alt"></i>
+                    <span>Gestión de contratos</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Cotizaciones</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Compras directas</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Ordenes de compra</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-file-certificate"></i>
+                    <span>Contrato marco</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>DTE</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-truck"></i>
+                    <span>Recepciones</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-cogs"></i>
+                    <span>Admin</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-users"></i>
+                    <span>Proveedores</span>
+                </li>
+            </a>
+        </ul>
+        <ul class="menu_item_sn5">
+            <a href="#">
+                <li class="menu_link_sn5">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Reportes</span>
+                </li>
+            </a>
+        </ul>
+    </nav>
+
+    <!--Contenedor-->
+    <div class="cuerpoDash" id="cuerpoPrincipal">
+        <div>
+            <iframe id="divIframePrincipal" src="./secciones/home_opc2.html" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+        $(".menu_link_sn5").click(function() {
+            var url = $(this).attr("rel");
+            $("#divIframePrincipal").attr("src", url);
+        });
+    </script>
+
+    <script src="./scripts/open_menu.js"></script>
+    <script src="./scripts/sticky_topbar.js"></script>
+
+    <script src="https://kit.fontawesome.com/bd4dd1fbd8.js" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
